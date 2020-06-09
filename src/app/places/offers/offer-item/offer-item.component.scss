@@ -1,6 +1,7 @@
 h1{
     font-size: 18px;
-    border: 1px solid var(--ion-color-dark);
+    // border: 1px solid var(--ion-color-dark);
+    box-shadow: lightness($color: #000000);
     padding: 8px;
     border-radius: 5px;
     color: var(--ion-color-dark);
