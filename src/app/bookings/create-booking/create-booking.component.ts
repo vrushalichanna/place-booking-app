@@ -45,12 +45,12 @@ endDate: string;
     return;
   }
 
-  this.modelCtrl.dismiss({bookingDate: {
-    firstName: this.dateForm.value['firstName'],
-    lastName: this.dateForm.value['lastName'],
-    guestNumber: this.dateForm.value['guestNo'],
-    startDate: this.dateForm.value['dateFrom'],
-    endDate: this.dateForm.value['dateTo'],
+  this.modelCtrl.dismiss({bookingData: {
+    firstName: this.dateForm.value.firstName,
+    lastName: this.dateForm.value.lastName,
+    guestNumber: +this.dateForm.value.guestNo,
+    startDate: new Date(this.dateForm.value.dateFrom),
+    endDate: new Date(this.dateForm.value.dateTo),
     } } , 'confirm');
   }
 
@@ -59,8 +59,8 @@ this.modelCtrl.dismiss(null, 'Cancel');
   }
 
   datesValid() {
-    const fromDate = new Date( this.dateForm.value['startDate']);
-    const toDate = new Date (this.dateForm.value['endDate']);
+    const fromDate = new Date( this.dateForm.value.startDate);
+    const toDate = new Date (this.dateForm.value.endDate);
     return toDate > fromDate ;
   }
 }
